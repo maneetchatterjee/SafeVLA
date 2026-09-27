@@ -1,0 +1,76 @@
+{
+  "folders": {
+    "test": {
+      "episodes": 1350,
+      "csv_hash_matches": true,
+      "trace_hash_mismatches": [],
+      "unpaired_condition_seeds": [],
+      "sensor_video_problems": []
+    },
+    "ablation": {
+      "episodes": 450,
+      "csv_hash_matches": true,
+      "trace_hash_mismatches": [],
+      "unpaired_condition_seeds": [],
+      "sensor_video_problems": []
+    },
+    "sweep": {
+      "episodes": 480,
+      "csv_hash_matches": true,
+      "trace_hash_mismatches": [],
+      "unpaired_condition_seeds": [],
+      "sensor_video_problems": []
+    }
+  },
+  "videos": {
+    "demo_success.mp4": {
+      "frames": 3097,
+      "width": 1920,
+      "height": 1080,
+      "first_frame_decodes": true,
+      "last_frame_decodes": true,
+      "is_1080p": true
+    },
+    "failure_cases.mp4": {
+      "frames": 3526,
+      "width": 1920,
+      "height": 1080,
+      "first_frame_decodes": true,
+      "last_frame_decodes": true,
+      "is_1080p": true
+    },
+    "instruction_safety.mp4": {
+      "frames": 1654,
+      "width": 1920,
+      "height": 1080,
+      "first_frame_decodes": true,
+      "last_frame_decodes": true,
+      "is_1080p": true
+    },
+    "ood_cases.mp4": {
+      "frames": 1746,
+      "width": 1920,
+      "height": 1080,
+      "first_frame_decodes": true,
+      "last_frame_decodes": true,
+      "is_1080p": true
+    },
+    "prevented_by_safevla.mp4": {
+      "frames": 5576,
+      "width": 1920,
+      "height": 1080,
+      "first_frame_decodes": true,
+      "last_frame_decodes": true,
+      "is_1080p": true
+    },
+    "unsafe_without_shield.mp4": {
+      "frames": 3872,
+      "width": 1920,
+      "height": 1080,
+      "first_frame_decodes": true,
+      "last_frame_decodes": true,
+      "is_1080p": true
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,190 @@
+{
+  "id": "safevla_v4",
+  "scope": "SafeVLA v4: MuJoCo Menagerie Franka Panda pick-and-place, RGB-D perception, BC+DAgger ensemble, hard CBF shield + learned conformal risk layer; 4 methods x 9 conditions x 30 paired test seeds, ablations, safety-utility sweep, report, 1080p replays. Simulation only.",
+  "stages": [
+    {
+      "id": "policy_bc",
+      "args": [
+        "scripts/safevla_v4.py",
+        "policy_bc"
+      ],
+      "outputs": [
+        "checkpoints/v4/policy_bc.pt"
+      ],
+      "timeout_hours": 3
+    },
+    {
+      "id": "dagger",
+      "args": [
+        "scripts/safevla_v4.py",
+        "dagger"
+      ],
+      "outputs": [
+        "checkpoints/v4/policy_dagger.pt"
+      ],
+      "timeout_hours": 4,
+      "env": {
+        "OMP_NUM_THREADS": "1"
+      },
+      "depends_on": [
+        "policy_bc"
+      ]
+    },
+    {
+      "id": "riskdata",
+      "depends_on": [
+        "dagger"
+      ],
+      "args": [
+        "scripts/safevla_v4.py",
+        "riskdata"
+      ],
+      "outputs": [
+        "results/v4/riskdata/riskdata.csv"
+      ],
+      "timeout_hours": 6,
+      "env": {
+        "OMP_NUM_THREADS": "1"
+      }
+    },
+    {
+      "id": "risk",
+      "depends_on": [
+        "riskdata"
+      ],
+      "args": [
+        "scripts/safevla_v4.py",
+        "risk"
+      ],
+      "outputs": [
+        "checkpoints/v4/risk.pt"
+      ],
+      "timeout_hours": 1,
+      "env": {
+        "OMP_NUM_THREADS": "4"
+      }
+    },
+    {
+      "id": "evaluate",
+      "depends_on": [
+        "risk"
+      ],
+      "args": [
+        "scripts/safevla_v4.py",
+        "evaluate"
+      ],
+      "outputs": [
+        "results/v4/test/evaluation_manifest.json"
+      ],
+      "timeout_hours": 16,
+      "env": {
+        "OMP_NUM_THREADS": "1"
+      }
+    },
+    {
+      "id": "report_core",
+      "depends_on": [
+        "evaluate"
+      ],
+      "args": [
+        "scripts/safevla_v4.py",
+        "report"
+      ],
+      "outputs": [
+        "reports/safevla_v4.md"
+      ],
+      "timeout_hours": 1
+    },
+    {
+      "id": "render",
+      "depends_on": [
+        "evaluate"
+      ],
+      "args": [
+        "scripts/safevla_v4.py",
+        "render"
+      ],
+      "outputs": [
+        "videos/v4/selection_manifest.json"
+      ],
+      "timeout_hours": 8
+    },
+    {
+      "id": "ablate",
+      "depends_on": [
+        "evaluate"
+      ],
+      "args": [
+        "scripts/safevla_v4.py",
+        "ablate"
+      ],
+      "outputs": [
+        "results/v4/ablation/evaluation_manifest.json"
+      ],
+      "timeout_hours": 10,
+      "env": {
+        "OMP_NUM_THREADS": "1"
+      }
+    },
+    {
+      "id": "sweep",
+      "depends_on": [
+        "evaluate"
+      ],
+      "args": [
+        "scripts/safevla_v4.py",
+        "sweep"
+      ],
+      "outputs": [
+        "results/v4/sweep/evaluation_manifest.json"
+      ],
+      "timeout_hours": 10,
+      "env": {
+        "OMP_NUM_THREADS": "1"
+      }
+    },
+    {
+      "id": "report",
+      "depends_on": [
+        "ablate",
+        "sweep"
+      ],
+      "args": [
+        "scripts/safevla_v4.py",
+        "report"
+      ],
+      "outputs": [
+        "figures/v4/safety_utility.png"
+      ],
+      "timeout_hours": 1
+    },
+    {
+      "id": "tests",
+      "args": [
+        "-m",
+        "pytest",
+        "tests/test_safevla_v4.py",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml=reports/pytest_safevla_v4.xml"
+      ],
+      "timeout_hours": 1
+    },
+    {
+      "id": "verify",
+      "depends_on": [
+        "render",
+        "report",
+        "tests"
+      ],
+      "args": [
+        "scripts/safevla_v4.py",
+        "verify"
+      ],
+      "outputs": [
+        "results/v4/verification.json"
+      ],
+      "timeout_hours": 1
+    }
+  ]
+}

@@ -1,0 +1,1206 @@
+{
+  "episodes": [
+    {
+      "seed": 2,
+      "success": true,
+      "steps": 134
+    },
+    {
+      "seed": 0,
+      "success": true,
+      "steps": 188
+    },
+    {
+      "seed": 1,
+      "success": true,
+      "steps": 197
+    },
+    {
+      "seed": 4,
+      "success": true,
+      "steps": 153
+    },
+    {
+      "seed": 3,
+      "success": true,
+      "steps": 171
+    },
+    {
+      "seed": 5,
+      "success": true,
+      "steps": 185
+    },
+    {
+      "seed": 6,
+      "success": true,
+      "steps": 138
+    },
+    {
+      "seed": 7,
+      "success": true,
+      "steps": 152
+    },
+    {
+      "seed": 8,
+      "success": true,
+      "steps": 145
+    },
+    {
+      "seed": 9,
+      "success": true,
+      "steps": 186
+    },
+    {
+      "seed": 10,
+      "success": true,
+      "steps": 151
+    },
+    {
+      "seed": 11,
+      "success": true,
+      "steps": 181
+    },
+    {
+      "seed": 12,
+      "success": true,
+      "steps": 137
+    },
+    {
+      "seed": 13,
+      "success": true,
+      "steps": 197
+    },
+    {
+      "seed": 14,
+      "success": true,
+      "steps": 180
+    },
+    {
+      "seed": 16,
+      "success": true,
+      "steps": 151
+    },
+    {
+      "seed": 15,
+      "success": true,
+      "steps": 192
+    },
+    {
+      "seed": 17,
+      "success": true,
+      "steps": 183
+    },
+    {
+      "seed": 18,
+      "success": true,
+      "steps": 140
+    },
+    {
+      "seed": 20,
+      "success": true,
+      "steps": 139
+    },
+    {
+      "seed": 19,
+      "success": true,
+      "steps": 189
+    },
+    {
+      "seed": 21,
+      "success": true,
+      "steps": 177
+    },
+    {
+      "seed": 22,
+      "success": true,
+      "steps": 188
+    },
+    {
+      "seed": 24,
+      "success": true,
+      "steps": 153
+    },
+    {
+      "seed": 23,
+      "success": true,
+      "steps": 216
+    },
+    {
+      "seed": 25,
+      "success": true,
+      "steps": 169
+    },
+    {
+      "seed": 26,
+      "success": true,
+      "steps": 158
+    },
+    {
+      "seed": 27,
+      "success": true,
+      "steps": 180
+    },
+    {
+      "seed": 28,
+      "success": true,
+      "steps": 153
+    },
+    {
+      "seed": 29,
+      "success": true,
+      "steps": 181
+    },
+    {
+      "seed": 30,
+      "success": true,
+      "steps": 151
+    },
+    {
+      "seed": 31,
+      "success": true,
+      "steps": 183
+    },
+    {
+      "seed": 32,
+      "success": true,
+      "steps": 144
+    },
+    {
+      "seed": 33,
+      "success": true,
+      "steps": 186
+    },
+    {
+      "seed": 34,
+      "success": true,
+      "steps": 139
+    },
+    {
+      "seed": 35,
+      "success": true,
+      "steps": 168
+    },
+    {
+      "seed": 36,
+      "success": true,
+      "steps": 154
+    },
+    {
+      "seed": 37,
+      "success": true,
+      "steps": 155
+    },
+    {
+      "seed": 38,
+      "success": true,
+      "steps": 153
+    },
+    {
+      "seed": 39,
+      "success": true,
+      "steps": 150
+    },
+    {
+      "seed": 40,
+      "success": true,
+      "steps": 153
+    },
+    {
+      "seed": 41,
+      "success": true,
+      "steps": 203
+    },
+    {
+      "seed": 42,
+      "success": true,
+      "steps": 162
+    },
+    {
+      "seed": 43,
+      "success": true,
+      "steps": 193
+    },
+    {
+      "seed": 44,
+      "success": true,
+      "steps": 159
+    },
+    {
+      "seed": 45,
+      "success": true,
+      "steps": 236
+    },
+    {
+      "seed": 46,
+      "success": true,
+      "steps": 166
+    },
+    {
+      "seed": 47,
+      "success": true,
+      "steps": 196
+    },
+    {
+      "seed": 48,
+      "success": true,
+      "steps": 149
+    },
+    {
+      "seed": 49,
+      "success": true,
+      "steps": 142
+    },
+    {
+      "seed": 50,
+      "success": true,
+      "steps": 138
+    },
+    {
+      "seed": 52,
+      "success": true,
+      "steps": 164
+    },
+    {
+      "seed": 51,
+      "success": true,
+      "steps": 181
+    },
+    {
+      "seed": 53,
+      "success": true,
+      "steps": 158
+    },
+    {
+      "seed": 54,
+      "success": true,
+      "steps": 133
+    },
+    {
+      "seed": 55,
+      "success": true,
+      "steps": 171
+    },
+    {
+      "seed": 56,
+      "success": true,
+      "steps": 169
+    },
+    {
+      "seed": 57,
+      "success": true,
+      "steps": 180
+    },
+    {
+      "seed": 58,
+      "success": true,
+      "steps": 144
+    },
+    {
+      "seed": 59,
+      "success": true,
+      "steps": 160
+    },
+    {
+      "seed": 60,
+      "success": true,
+      "steps": 157
+    },
+    {
+      "seed": 61,
+      "success": true,
+      "steps": 175
+    },
+    {
+      "seed": 62,
+      "success": true,
+      "steps": 146
+    },
+    {
+      "seed": 63,
+      "success": true,
+      "steps": 193
+    },
+    {
+      "seed": 65,
+      "success": true,
+      "steps": 148
+    },
+    {
+      "seed": 64,
+      "success": true,
+      "steps": 178
+    },
+    {
+      "seed": 66,
+      "success": true,
+      "steps": 152
+    },
+    {
+      "seed": 68,
+      "success": true,
+      "steps": 169
+    },
+    {
+      "seed": 67,
+      "success": true,
+      "steps": 180
+    },
+    {
+      "seed": 69,
+      "success": true,
+      "steps": 224
+    },
+    {
+      "seed": 70,
+      "success": true,
+      "steps": 158
+    },
+    {
+      "seed": 71,
+      "success": true,
+      "steps": 185
+    },
+    {
+      "seed": 72,
+      "success": true,
+      "steps": 162
+    },
+    {
+      "seed": 73,
+      "success": true,
+      "steps": 171
+    },
+    {
+      "seed": 74,
+      "success": true,
+      "steps": 169
+    },
+    {
+      "seed": 76,
+      "success": true,
+      "steps": 167
+    },
+    {
+      "seed": 75,
+      "success": true,
+      "steps": 165
+    },
+    {
+      "seed": 77,
+      "success": true,
+      "steps": 155
+    },
+    {
+      "seed": 78,
+      "success": true,
+      "steps": 141
+    },
+    {
+      "seed": 80,
+      "success": true,
+      "steps": 146
+    },
+    {
+      "seed": 79,
+      "success": true,
+      "steps": 222
+    },
+    {
+      "seed": 81,
+      "success": true,
+      "steps": 152
+    },
+    {
+      "seed": 82,
+      "success": true,
+      "steps": 165
+    },
+    {
+      "seed": 84,
+      "success": true,
+      "steps": 161
+    },
+    {
+      "seed": 83,
+      "success": true,
+      "steps": 180
+    },
+    {
+      "seed": 85,
+      "success": true,
+      "steps": 191
+    },
+    {
+      "seed": 86,
+      "success": true,
+      "steps": 150
+    },
+    {
+      "seed": 87,
+      "success": true,
+      "steps": 155
+    },
+    {
+      "seed": 88,
+      "success": true,
+      "steps": 157
+    },
+    {
+      "seed": 89,
+      "success": true,
+      "steps": 155
+    },
+    {
+      "seed": 90,
+      "success": true,
+      "steps": 131
+    },
+    {
+      "seed": 92,
+      "success": true,
+      "steps": 161
+    },
+    {
+      "seed": 91,
+      "success": true,
+      "steps": 176
+    },
+    {
+      "seed": 93,
+      "success": true,
+      "steps": 210
+    },
+    {
+      "seed": 94,
+      "success": true,
+      "steps": 144
+    },
+    {
+      "seed": 96,
+      "success": true,
+      "steps": 143
+    },
+    {
+      "seed": 95,
+      "success": true,
+      "steps": 181
+    },
+    {
+      "seed": 97,
+      "success": true,
+      "steps": 179
+    },
+    {
+      "seed": 98,
+      "success": true,
+      "steps": 177
+    },
+    {
+      "seed": 99,
+      "success": true,
+      "steps": 185
+    },
+    {
+      "seed": 100,
+      "success": true,
+      "steps": 183
+    },
+    {
+      "seed": 101,
+      "success": true,
+      "steps": 190
+    },
+    {
+      "seed": 102,
+      "success": true,
+      "steps": 137
+    },
+    {
+      "seed": 103,
+      "success": true,
+      "steps": 169
+    },
+    {
+      "seed": 104,
+      "success": true,
+      "steps": 177
+    },
+    {
+      "seed": 105,
+      "success": true,
+      "steps": 211
+    },
+    {
+      "seed": 106,
+      "success": true,
+      "steps": 151
+    },
+    {
+      "seed": 108,
+      "success": true,
+      "steps": 146
+    },
+    {
+      "seed": 107,
+      "success": true,
+      "steps": 159
+    },
+    {
+      "seed": 109,
+      "success": true,
+      "steps": 170
+    },
+    {
+      "seed": 110,
+      "success": true,
+      "steps": 163
+    },
+    {
+      "seed": 112,
+      "success": true,
+      "steps": 134
+    },
+    {
+      "seed": 111,
+      "success": true,
+      "steps": 184
+    },
+    {
+      "seed": 113,
+      "success": true,
+      "steps": 160
+    },
+    {
+      "seed": 114,
+      "success": true,
+      "steps": 159
+    },
+    {
+      "seed": 115,
+      "success": true,
+      "steps": 172
+    },
+    {
+      "seed": 116,
+      "success": true,
+      "steps": 142
+    },
+    {
+      "seed": 117,
+      "success": true,
+      "steps": 187
+    },
+    {
+      "seed": 118,
+      "success": true,
+      "steps": 148
+    },
+    {
+      "seed": 119,
+      "success": true,
+      "steps": 184
+    },
+    {
+      "seed": 120,
+      "success": true,
+      "steps": 156
+    },
+    {
+      "seed": 121,
+      "success": true,
+      "steps": 174
+    },
+    {
+      "seed": 122,
+      "success": true,
+      "steps": 143
+    },
+    {
+      "seed": 124,
+      "success": true,
+      "steps": 167
+    },
+    {
+      "seed": 123,
+      "success": true,
+      "steps": 181
+    },
+    {
+      "seed": 125,
+      "success": true,
+      "steps": 188
+    },
+    {
+      "seed": 126,
+      "success": true,
+      "steps": 138
+    },
+    {
+      "seed": 128,
+      "success": true,
+      "steps": 148
+    },
+    {
+      "seed": 127,
+      "success": true,
+      "steps": 211
+    },
+    {
+      "seed": 129,
+      "success": true,
+      "steps": 193
+    },
+    {
+      "seed": 130,
+      "success": true,
+      "steps": 146
+    },
+    {
+      "seed": 131,
+      "success": true,
+      "steps": 174
+    },
+    {
+      "seed": 132,
+      "success": true,
+      "steps": 143
+    },
+    {
+      "seed": 133,
+      "success": true,
+      "steps": 192
+    },
+    {
+      "seed": 134,
+      "success": true,
+      "steps": 164
+    },
+    {
+      "seed": 135,
+      "success": true,
+      "steps": 176
+    },
+    {
+      "seed": 136,
+      "success": true,
+      "steps": 150
+    },
+    {
+      "seed": 137,
+      "success": true,
+      "steps": 183
+    },
+    {
+      "seed": 138,
+      "success": true,
+      "steps": 136
+    },
+    {
+      "seed": 140,
+      "success": true,
+      "steps": 137
+    },
+    {
+      "seed": 139,
+      "success": true,
+      "steps": 205
+    },
+    {
+      "seed": 141,
+      "success": true,
+      "steps": 172
+    },
+    {
+      "seed": 142,
+      "success": true,
+      "steps": 140
+    },
+    {
+      "seed": 144,
+      "success": true,
+      "steps": 149
+    },
+    {
+      "seed": 143,
+      "success": true,
+      "steps": 168
+    },
+    {
+      "seed": 145,
+      "success": true,
+      "steps": 167
+    },
+    {
+      "seed": 146,
+      "success": true,
+      "steps": 143
+    },
+    {
+      "seed": 148,
+      "success": true,
+      "steps": 136
+    },
+    {
+      "seed": 147,
+      "success": true,
+      "steps": 183
+    },
+    {
+      "seed": 149,
+      "success": true,
+      "steps": 180
+    },
+    {
+      "seed": 150,
+      "success": true,
+      "steps": 140
+    },
+    {
+      "seed": 152,
+      "success": true,
+      "steps": 146
+    },
+    {
+      "seed": 151,
+      "success": true,
+      "steps": 215
+    },
+    {
+      "seed": 153,
+      "success": true,
+      "steps": 210
+    },
+    {
+      "seed": 154,
+      "success": true,
+      "steps": 151
+    },
+    {
+      "seed": 156,
+      "success": true,
+      "steps": 139
+    },
+    {
+      "seed": 155,
+      "success": true,
+      "steps": 173
+    },
+    {
+      "seed": 157,
+      "success": true,
+      "steps": 158
+    },
+    {
+      "seed": 158,
+      "success": true,
+      "steps": 154
+    },
+    {
+      "seed": 160,
+      "success": true,
+      "steps": 147
+    },
+    {
+      "seed": 159,
+      "success": true,
+      "steps": 240
+    },
+    {
+      "seed": 161,
+      "success": true,
+      "steps": 210
+    },
+    {
+      "seed": 162,
+      "success": true,
+      "steps": 160
+    },
+    {
+      "seed": 164,
+      "success": true,
+      "steps": 140
+    },
+    {
+      "seed": 163,
+      "success": true,
+      "steps": 197
+    },
+    {
+      "seed": 165,
+      "success": true,
+      "steps": 196
+    },
+    {
+      "seed": 166,
+      "success": true,
+      "steps": 157
+    },
+    {
+      "seed": 168,
+      "success": true,
+      "steps": 147
+    },
+    {
+      "seed": 167,
+      "success": true,
+      "steps": 199
+    },
+    {
+      "seed": 169,
+      "success": true,
+      "steps": 192
+    },
+    {
+      "seed": 170,
+      "success": true,
+      "steps": 144
+    },
+    {
+      "seed": 171,
+      "success": true,
+      "steps": 153
+    },
+    {
+      "seed": 172,
+      "success": true,
+      "steps": 155
+    },
+    {
+      "seed": 173,
+      "success": true,
+      "steps": 165
+    },
+    {
+      "seed": 174,
+      "success": true,
+      "steps": 177
+    },
+    {
+      "seed": 176,
+      "success": true,
+      "steps": 145
+    },
+    {
+      "seed": 175,
+      "success": true,
+      "steps": 183
+    },
+    {
+      "seed": 177,
+      "success": true,
+      "steps": 156
+    },
+    {
+      "seed": 178,
+      "success": true,
+      "steps": 160
+    },
+    {
+      "seed": 180,
+      "success": true,
+      "steps": 161
+    },
+    {
+      "seed": 179,
+      "success": true,
+      "steps": 218
+    },
+    {
+      "seed": 181,
+      "success": true,
+      "steps": 191
+    },
+    {
+      "seed": 182,
+      "success": true,
+      "steps": 157
+    },
+    {
+      "seed": 184,
+      "success": true,
+      "steps": 155
+    },
+    {
+      "seed": 185,
+      "success": true,
+      "steps": 176
+    },
+    {
+      "seed": 183,
+      "success": true,
+      "steps": 236
+    },
+    {
+      "seed": 186,
+      "success": true,
+      "steps": 153
+    },
+    {
+      "seed": 188,
+      "success": true,
+      "steps": 128
+    },
+    {
+      "seed": 187,
+      "success": true,
+      "steps": 183
+    },
+    {
+      "seed": 189,
+      "success": true,
+      "steps": 192
+    },
+    {
+      "seed": 190,
+      "success": true,
+      "steps": 159
+    },
+    {
+      "seed": 192,
+      "success": true,
+      "steps": 151
+    },
+    {
+      "seed": 191,
+      "success": true,
+      "steps": 183
+    },
+    {
+      "seed": 193,
+      "success": true,
+      "steps": 160
+    },
+    {
+      "seed": 194,
+      "success": true,
+      "steps": 165
+    },
+    {
+      "seed": 195,
+      "success": true,
+      "steps": 159
+    },
+    {
+      "seed": 196,
+      "success": true,
+      "steps": 153
+    },
+    {
+      "seed": 197,
+      "success": true,
+      "steps": 213
+    },
+    {
+      "seed": 198,
+      "success": true,
+      "steps": 151
+    },
+    {
+      "seed": 199,
+      "success": true,
+      "steps": 205
+    },
+    {
+      "seed": 200,
+      "success": true,
+      "steps": 140
+    },
+    {
+      "seed": 201,
+      "success": true,
+      "steps": 187
+    },
+    {
+      "seed": 202,
+      "success": true,
+      "steps": 149
+    },
+    {
+      "seed": 204,
+      "success": true,
+      "steps": 149
+    },
+    {
+      "seed": 203,
+      "success": true,
+      "steps": 192
+    },
+    {
+      "seed": 205,
+      "success": true,
+      "steps": 198
+    },
+    {
+      "seed": 206,
+      "success": true,
+      "steps": 168
+    },
+    {
+      "seed": 208,
+      "success": true,
+      "steps": 163
+    },
+    {
+      "seed": 207,
+      "success": true,
+      "steps": 216
+    },
+    {
+      "seed": 209,
+      "success": true,
+      "steps": 175
+    },
+    {
+      "seed": 210,
+      "success": true,
+      "steps": 140
+    },
+    {
+      "seed": 212,
+      "success": true,
+      "steps": 157
+    },
+    {
+      "seed": 211,
+      "success": true,
+      "steps": 201
+    },
+    {
+      "seed": 213,
+      "success": true,
+      "steps": 168
+    },
+    {
+      "seed": 214,
+      "success": true,
+      "steps": 150
+    },
+    {
+      "seed": 216,
+      "success": true,
+      "steps": 163
+    },
+    {
+      "seed": 215,
+      "success": true,
+      "steps": 228
+    },
+    {
+      "seed": 217,
+      "success": true,
+      "steps": 205
+    },
+    {
+      "seed": 218,
+      "success": true,
+      "steps": 145
+    },
+    {
+      "seed": 220,
+      "success": true,
+      "steps": 166
+    },
+    {
+      "seed": 219,
+      "success": true,
+      "steps": 203
+    },
+    {
+      "seed": 221,
+      "success": true,
+      "steps": 210
+    },
+    {
+      "seed": 222,
+      "success": true,
+      "steps": 150
+    },
+    {
+      "seed": 224,
+      "success": true,
+      "steps": 161
+    },
+    {
+      "seed": 223,
+      "success": true,
+      "steps": 201
+    },
+    {
+      "seed": 225,
+      "success": true,
+      "steps": 188
+    },
+    {
+      "seed": 226,
+      "success": true,
+      "steps": 179
+    },
+    {
+      "seed": 228,
+      "success": true,
+      "steps": 152
+    },
+    {
+      "seed": 227,
+      "success": true,
+      "steps": 175
+    },
+    {
+      "seed": 229,
+      "success": true,
+      "steps": 162
+    },
+    {
+      "seed": 230,
+      "success": true,
+      "steps": 141
+    },
+    {
+      "seed": 232,
+      "success": true,
+      "steps": 149
+    },
+    {
+      "seed": 231,
+      "success": true,
+      "steps": 211
+    },
+    {
+      "seed": 233,
+      "success": true,
+      "steps": 163
+    },
+    {
+      "seed": 234,
+      "success": true,
+      "steps": 148
+    },
+    {
+      "seed": 236,
+      "success": true,
+      "steps": 151
+    },
+    {
+      "seed": 235,
+      "success": true,
+      "steps": 189
+    },
+    {
+      "seed": 237,
+      "success": true,
+      "steps": 171
+    },
+    {
+      "seed": 238,
+      "success": true,
+      "steps": 148
+    },
+    {
+      "seed": 239,
+      "success": true,
+      "steps": 184
+    }
+  ],
+  "successes": 240,
+  "total": 240
+}

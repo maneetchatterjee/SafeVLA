@@ -1,0 +1,12 @@
+# SafeVLA v4 — versions of the working Ubuntu 24.04 / Python 3.12 venv.
+mujoco==3.3.5
+PyOpenGL==3.1.10
+numpy==2.2.6
+scipy==1.15.3
+torch==2.8.0
+opencv-python-headless==4.12.0.88
+imageio==2.37.2
+imageio-ffmpeg==0.6.0
+matplotlib==3.10.6
+pillow==11.3.0
+pytest==9.0.2

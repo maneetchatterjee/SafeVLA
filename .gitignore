@@ -1,0 +1,21 @@
+# model weights are never committed; every pipeline regenerates them
+checkpoints/
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+# bulky per-episode artefacts kept on the compute server
+results/*/test/traces/
+results/*/test/states/
+results/*/data/
+*.npz
+!data/v4/demos/*.npz
+# runtime queue state (status.json, logs); the queue definitions *.json at top level are tracked
+experiment_tracking/*/
+# local environments and caches
+.venv*/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.log
+MUJOCO_LOG.TXT

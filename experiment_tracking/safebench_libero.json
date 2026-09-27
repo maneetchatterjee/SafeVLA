@@ -1,0 +1,14 @@
+{
+  "id": "safebench_libero",
+  "scope": "SafeVLA hard + learned safety layer wrapped around pretrained OpenVLA-7B (openvla-7b-finetuned-libero-spatial, float16 on V100) on LIBERO-Spatial with injected wall / fragile vase / moving human / sensor corruption. OSC actions mapped through a MuJoCo kinematic twin; hazards perceived from two depth cameras with oracle segmentation. Test = init states 0..N-1 of each task; risk fitting uses init states 20+ and 30+.",
+  "stages": [
+    {"id": "calibrate", "python": "~/maneet/bench/env-libero/bin/python", "args": ["bench/run_libero.py", "calibrate"], "timeout_hours": 1},
+    {"id": "smoke", "python": "~/maneet/bench/env-libero/bin/python", "args": ["bench/run_libero.py", "smoke"], "timeout_hours": 2, "depends_on": ["calibrate"]},
+    {"id": "riskdata", "python": "~/maneet/bench/env-libero/bin/python", "args": ["bench/run_libero.py", "riskdata"], "timeout_hours": 12, "depends_on": ["smoke"]},
+    {"id": "risk", "python": "~/maneet/bench/env-libero/bin/python", "args": ["bench/run_libero.py", "risk"], "timeout_hours": 2, "depends_on": ["riskdata"]},
+    {"id": "evaluate", "python": "~/maneet/bench/env-libero/bin/python", "args": ["bench/run_libero.py", "evaluate"], "timeout_hours": 30, "depends_on": ["risk"]},
+    {"id": "report", "python": "~/maneet/bench/env-libero/bin/python", "args": ["bench/run_libero.py", "report"], "timeout_hours": 1, "depends_on": ["evaluate"]},
+    {"id": "render", "python": "~/maneet/bench/env-libero/bin/python", "args": ["bench/run_libero.py", "render"], "timeout_hours": 3, "depends_on": ["report"]},
+    {"id": "verify", "python": "~/maneet/bench/env-libero/bin/python", "args": ["bench/run_libero.py", "verify"], "timeout_hours": 1, "depends_on": ["render"]}
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "safebench_libero_v3",
+  "scope": "Same experiment as safebench_libero, rescaled for one-to-two shared V100s: calibrate is reused from safebench_libero (checkpoints/libero/gains.json); risk fitting uses 1 init state per task/condition (150 labelled episodes), test uses init states 0..2 (10 tasks x 5 conditions x 3 x 4 methods = 600 episodes). riskdata and evaluate save every 40 episodes and resume on relaunch. v3: segmentation edge-blend filter + sensor range cutoff (v2 perceived phantom hazards in clean scenes); smoke re-run as the gate.",
+  "stages": [
+    {
+      "id": "smoke",
+      "python": "~/maneet/bench/env-libero/bin/python",
+      "args": [
+        "bench/run_libero.py",
+        "smoke"
+      ],
+      "env": {
+        "SAFEBENCH_N_RISK": "1",
+        "SAFEBENCH_N_TEST": "3"
+      },
+      "timeout_hours": 2
+    },
+    {
+      "id": "riskdata",
+      "python": "~/maneet/bench/env-libero/bin/python",
+      "args": [
+        "bench/run_libero.py",
+        "riskdata"
+      ],
+      "env": {
+        "SAFEBENCH_N_RISK": "1",
+        "SAFEBENCH_N_TEST": "3"
+      },
+      "timeout_hours": 14,
+      "depends_on": [
+        "smoke"
+      ]
+    },
+    {
+      "id": "risk",
+      "python": "~/maneet/bench/env-libero/bin/python",
+      "args": [
+        "bench/run_libero.py",
+        "risk"
+      ],
+      "env": {
+        "SAFEBENCH_N_RISK": "1",
+        "SAFEBENCH_N_TEST": "3"
+      },
+      "timeout_hours": 2,
+      "depends_on": [
+        "riskdata"
+      ]
+    },
+    {
+      "id": "evaluate",
+      "python": "~/maneet/bench/env-libero/bin/python",
+      "args": [
+        "bench/run_libero.py",
+        "evaluate"
+      ],
+      "env": {
+        "SAFEBENCH_N_RISK": "1",
+        "SAFEBENCH_N_TEST": "3"
+      },
+      "timeout_hours": 48,
+      "depends_on": [
+        "risk"
+      ]
+    },
+    {
+      "id": "report",
+      "python": "~/maneet/bench/env-libero/bin/python",
+      "args": [
+        "bench/run_libero.py",
+        "report"
+      ],
+      "env": {
+        "SAFEBENCH_N_RISK": "1",
+        "SAFEBENCH_N_TEST": "3"
+      },
+      "timeout_hours": 1,
+      "depends_on": [
+        "evaluate"
+      ]
+    },
+    {
+      "id": "render",
+      "python": "~/maneet/bench/env-libero/bin/python",
+      "args": [
+        "bench/run_libero.py",
+        "render"
+      ],
+      "env": {
+        "SAFEBENCH_N_RISK": "1",
+        "SAFEBENCH_N_TEST": "3"
+      },
+      "timeout_hours": 3,
+      "depends_on": [
+        "report"
+      ]
+    },
+    {
+      "id": "verify",
+      "python": "~/maneet/bench/env-libero/bin/python",
+      "args": [
+        "bench/run_libero.py",
+        "verify"
+      ],
+      "env": {
+        "SAFEBENCH_N_RISK": "1",
+        "SAFEBENCH_N_TEST": "3"
+      },
+      "timeout_hours": 1,
+      "depends_on": [
+        "render"
+      ]
+    }
+  ]
+}

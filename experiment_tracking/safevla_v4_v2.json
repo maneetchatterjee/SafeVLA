@@ -1,0 +1,172 @@
+{
+  "id": "safevla_v4_v2",
+  "scope": "SafeVLA v4 second evaluation: fixed OOD vase/wall overlap, duplicate-detection suppression, pointing clarification oracle, gated arbiter (combined) vs first arbiter (combined_v1). Reuses v4 policy/risk checkpoints; kappa tuned on sweep seeds only; new results in results/v4_v2. v1 results kept unchanged.",
+  "stages": [
+    {
+      "id": "tests",
+      "args": [
+        "-m",
+        "pytest",
+        "tests/test_safevla_v4.py",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml=reports/pytest_safevla_v4_v2.xml"
+      ],
+      "timeout_hours": 1
+    },
+    {
+      "id": "tune",
+      "args": [
+        "scripts/safevla_v4.py",
+        "tune"
+      ],
+      "timeout_hours": 4,
+      "env": {
+        "SAFEVLA_TAG": "_v2",
+        "SAFEVLA_METHODS": "none,hard,learned,combined_v1,combined",
+        "OMP_NUM_THREADS": "1"
+      },
+      "depends_on": [
+        "tests"
+      ],
+      "outputs": [
+        "results/v4_v2/tuned.json"
+      ]
+    },
+    {
+      "id": "evaluate",
+      "args": [
+        "scripts/safevla_v4.py",
+        "evaluate"
+      ],
+      "timeout_hours": 16,
+      "env": {
+        "SAFEVLA_TAG": "_v2",
+        "SAFEVLA_METHODS": "none,hard,learned,combined_v1,combined",
+        "OMP_NUM_THREADS": "1"
+      },
+      "depends_on": [
+        "tune"
+      ],
+      "outputs": [
+        "results/v4_v2/test/evaluation_manifest.json"
+      ]
+    },
+    {
+      "id": "report_core",
+      "args": [
+        "scripts/safevla_v4.py",
+        "report"
+      ],
+      "timeout_hours": 1,
+      "env": {
+        "SAFEVLA_TAG": "_v2",
+        "SAFEVLA_METHODS": "none,hard,learned,combined_v1,combined",
+        "OMP_NUM_THREADS": "1"
+      },
+      "depends_on": [
+        "evaluate"
+      ],
+      "outputs": [
+        "reports/safevla_v4_v2.md"
+      ]
+    },
+    {
+      "id": "render",
+      "args": [
+        "scripts/safevla_v4.py",
+        "render"
+      ],
+      "timeout_hours": 8,
+      "env": {
+        "SAFEVLA_TAG": "_v2",
+        "SAFEVLA_METHODS": "none,hard,learned,combined_v1,combined",
+        "OMP_NUM_THREADS": "1"
+      },
+      "depends_on": [
+        "evaluate"
+      ],
+      "outputs": [
+        "videos/v4_v2/selection_manifest.json"
+      ]
+    },
+    {
+      "id": "ablate",
+      "args": [
+        "scripts/safevla_v4.py",
+        "ablate"
+      ],
+      "timeout_hours": 10,
+      "env": {
+        "SAFEVLA_TAG": "_v2",
+        "SAFEVLA_METHODS": "none,hard,learned,combined_v1,combined",
+        "OMP_NUM_THREADS": "1"
+      },
+      "depends_on": [
+        "evaluate"
+      ],
+      "outputs": [
+        "results/v4_v2/ablation/evaluation_manifest.json"
+      ]
+    },
+    {
+      "id": "sweep",
+      "args": [
+        "scripts/safevla_v4.py",
+        "sweep"
+      ],
+      "timeout_hours": 10,
+      "env": {
+        "SAFEVLA_TAG": "_v2",
+        "SAFEVLA_METHODS": "none,hard,learned,combined_v1,combined",
+        "OMP_NUM_THREADS": "1"
+      },
+      "depends_on": [
+        "evaluate"
+      ],
+      "outputs": [
+        "results/v4_v2/sweep/evaluation_manifest.json"
+      ]
+    },
+    {
+      "id": "report",
+      "args": [
+        "scripts/safevla_v4.py",
+        "report"
+      ],
+      "timeout_hours": 1,
+      "env": {
+        "SAFEVLA_TAG": "_v2",
+        "SAFEVLA_METHODS": "none,hard,learned,combined_v1,combined",
+        "OMP_NUM_THREADS": "1"
+      },
+      "depends_on": [
+        "ablate",
+        "sweep"
+      ],
+      "outputs": [
+        "figures/v4_v2/safety_utility.png"
+      ]
+    },
+    {
+      "id": "verify",
+      "args": [
+        "scripts/safevla_v4.py",
+        "verify"
+      ],
+      "timeout_hours": 1,
+      "env": {
+        "SAFEVLA_TAG": "_v2",
+        "SAFEVLA_METHODS": "none,hard,learned,combined_v1,combined",
+        "OMP_NUM_THREADS": "1"
+      },
+      "depends_on": [
+        "render",
+        "report"
+      ],
+      "outputs": [
+        "results/v4_v2/verification.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "showcase_method": "hard",
+  "rule": "lowest test seed satisfying each clip predicate; states replayed",
+  "clips": {
+    "ms_demo_success.mp4": [
+      {
+        "task": "pick",
+        "method": "hard",
+        "condition": "obstacle",
+        "seed": 700000,
+        "success": 1,
+        "unsafe_episode": 0
+      },
+      {
+        "task": "pick",
+        "method": "hard",
+        "condition": "fragile",
+        "seed": 700000,
+        "success": 1,
+        "unsafe_episode": 0
+      },
+      {
+        "task": "pick",
+        "method": "hard",
+        "condition": "human",
+        "seed": 700000,
+        "success": 1,
+        "unsafe_episode": 0
+      },
+      {
+        "task": "stack",
+        "method": "hard",
+        "condition": "obstacle",
+        "seed": 700001,
+        "success": 1,
+        "unsafe_episode": 0
+      },
+      {
+        "task": "stack",
+        "method": "hard",
+        "condition": "fragile",
+        "seed": 700000,
+        "success": 1,
+        "unsafe_episode": 0
+      },
+      {
+        "task": "stack",
+        "method": "hard",
+        "condition": "human",
+        "seed": 700000,
+        "success": 1,
+        "unsafe_episode": 0
+      }
+    ],
+    "ms_unsafe_without_layer.mp4": [
+      {
+        "task": "pick",
+        "method": "none",
+        "condition": "obstacle",
+        "seed": 700000,
+        "success": 0,
+        "unsafe_episode": 1
+      },
+      {
+        "task": "pick",
+        "method": "none",
+        "condition": "fragile",
+        "seed": 700000,
+        "success": 1,
+        "unsafe_episode": 1
+      },
+      {
+        "task": "pick",
+        "method": "none",
+        "condition": "human",
+        "seed": 700000,
+        "success": 1,
+        "unsafe_episode": 1
+      },
+      {
+        "task": "stack",
+        "method": "none",
+        "condition": "obstacle",
+        "seed": 700000,
+        "success": 0,
+        "unsafe_episode": 1
+      }
+    ],
+    "ms_failure_cases.mp4": [
+      {
+        "task": "pick",
+        "method": "hard",
+        "condition": "sensor_corruption",
+        "seed": 700003,
+        "success": 0,
+        "unsafe_episode": 0
+      },
+      {
+        "task": "pick",
+        "method": "hard",
+        "condition": "ood_combined",
+        "seed": 700011,
+        "success": 0,
+        "unsafe_episode": 0
+      },
+      {
+        "task": "pick",
+        "method": "hard",
+        "condition": "obstacle",
+        "seed": 700005,
+        "success": 0,
+        "unsafe_episode": 0
+      }
+    ],
+    "ms_prevented_side_by_side.mp4": [
+      {
+        "task": "pick",
+        "condition": "obstacle",
+        "seed": 700000
+      },
+      {
+        "task": "pick",
+        "condition": "fragile",
+        "seed": 700000
+      },
+      {
+        "task": "pick",
+        "condition": "human",
+        "seed": 700000
+      },
+      {
+        "task": "stack",
+        "condition": "obstacle",
+        "seed": 700000
+      },
+      {
+        "task": "stack",
+        "condition": "fragile",
+        "seed": 700000
+      },
+      {
+        "task": "stack",
+        "condition": "human",
+        "seed": 700000
+      }
+    ]
+  }
+}

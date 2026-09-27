@@ -1,0 +1,16 @@
+{
+  "id": "safebench_maniskill",
+  "scope": "SafeVLA hard + learned safety layer on ManiSkill 3 (PickCube-v1, StackCube-v1 with injected wall / fragile vase / moving human / sensor corruption / OOD). Base policy: BC + DAgger action-chunk ensemble over ManiSkill state observations; safety layer via a MuJoCo kinematic twin of the Panda and depth+segmentation hazard perception. Test seeds 700000+, never used for fitting.",
+  "stages": [
+    {"id": "smoke", "python": "~/maneet/bench/env-maniskill/bin/python", "args": ["bench/run_maniskill.py", "smoke"], "timeout_hours": 1, "env": {"SAFEBENCH_WORKERS": "16"}},
+    {"id": "demos", "python": "~/maneet/bench/env-maniskill/bin/python", "args": ["bench/run_maniskill.py", "demos"], "timeout_hours": 3, "env": {"SAFEBENCH_WORKERS": "16"}, "depends_on": ["smoke"]},
+    {"id": "bc", "python": "~/maneet/bench/env-maniskill/bin/python", "args": ["bench/run_maniskill.py", "bc"], "timeout_hours": 3, "env": {"SAFEBENCH_WORKERS": "16", "SAFEVLA_TRAIN_THREADS": "8"}, "depends_on": ["demos"]},
+    {"id": "dagger", "python": "~/maneet/bench/env-maniskill/bin/python", "args": ["bench/run_maniskill.py", "dagger"], "timeout_hours": 4, "env": {"SAFEBENCH_WORKERS": "16", "SAFEVLA_TRAIN_THREADS": "8"}, "depends_on": ["bc"]},
+    {"id": "riskdata", "python": "~/maneet/bench/env-maniskill/bin/python", "args": ["bench/run_maniskill.py", "riskdata"], "timeout_hours": 6, "env": {"SAFEBENCH_WORKERS": "16"}, "depends_on": ["dagger"]},
+    {"id": "risk", "python": "~/maneet/bench/env-maniskill/bin/python", "args": ["bench/run_maniskill.py", "risk"], "timeout_hours": 2, "depends_on": ["riskdata"]},
+    {"id": "evaluate", "python": "~/maneet/bench/env-maniskill/bin/python", "args": ["bench/run_maniskill.py", "evaluate"], "timeout_hours": 10, "env": {"SAFEBENCH_WORKERS": "16"}, "depends_on": ["risk"]},
+    {"id": "report", "python": "~/maneet/bench/env-maniskill/bin/python", "args": ["bench/run_maniskill.py", "report"], "timeout_hours": 1, "depends_on": ["evaluate"]},
+    {"id": "render", "python": "~/maneet/bench/env-maniskill/bin/python", "args": ["bench/run_maniskill.py", "render"], "timeout_hours": 3, "depends_on": ["report"]},
+    {"id": "verify", "python": "~/maneet/bench/env-maniskill/bin/python", "args": ["bench/run_maniskill.py", "verify"], "timeout_hours": 1, "depends_on": ["render"]}
+  ]
+}

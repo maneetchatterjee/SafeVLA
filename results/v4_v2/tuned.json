@@ -1,0 +1,35 @@
+{
+  "selected_kappa": 0.04,
+  "rule": "Select the learned-margin gain on sweep seeds (800000+), never on test seeds.\n\n    Pre-declared rule: maximise pooled success subject to unsafe episodes not\n    exceeding the hard-only layer's on the same tuning seeds; ties -> larger kappa.",
+  "tuning_seeds": [
+    800000,
+    800011
+  ],
+  "episodes_per_config": 60,
+  "table": {
+    "kappa0.0": {
+      "success": 35,
+      "unsafe": 8
+    },
+    "kappa0.02": {
+      "success": 35,
+      "unsafe": 8
+    },
+    "kappa0.04": {
+      "success": 35,
+      "unsafe": 8
+    },
+    "kappa0.06": {
+      "success": 34,
+      "unsafe": 8
+    },
+    "hard": {
+      "success": 43,
+      "unsafe": 5
+    },
+    "combined_v1": {
+      "success": 25,
+      "unsafe": 7
+    }
+  }
+}
