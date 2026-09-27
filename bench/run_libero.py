@@ -41,17 +41,32 @@ GPU_SPEC = os.environ.get("SAFEBENCH_GPUS", "auto")  # "auto" = every GPU with >
 VLA_GB = 17.0
 
 
-def free_gpus():
-    """GPUs usable for one OpenVLA-7B fp16 worker each (queried at stage start; other users share the server)."""
-    import subprocess
+GPU_WAIT_H = float(os.environ.get("SAFEBENCH_GPU_WAIT_H", "12"))
 
-    out = subprocess.run(["nvidia-smi", "--query-gpu=index,memory.free", "--format=csv,noheader,nounits"], capture_output=True, text=True).stdout
-    free = {line.split(",")[0].strip(): float(line.split(",")[1]) / 1024 for line in out.strip().splitlines()}
-    wanted = list(free) if GPU_SPEC == "auto" else GPU_SPEC.split(",")
-    usable = [g for g in wanted if free.get(g, 0) >= VLA_GB]
-    log(f"GPU free memory (GB): { {g: round(v, 1) for g, v in free.items()} } -> using {usable}")
+
+def free_gpus():
+    """GPUs usable for one OpenVLA-7B fp16 worker each (queried per batch; other users share the server).
+
+    When every GPU is busy, waits (re-checking every 5 min, up to SAFEBENCH_GPU_WAIT_H hours) instead of failing.
+    """
+    import subprocess
+    import time
+
+    waited = 0.0
+    while True:
+        out = subprocess.run(["nvidia-smi", "--query-gpu=index,memory.free", "--format=csv,noheader,nounits"], capture_output=True, text=True).stdout
+        free = {line.split(",")[0].strip(): float(line.split(",")[1]) / 1024 for line in out.strip().splitlines()}
+        wanted = list(free) if GPU_SPEC == "auto" else GPU_SPEC.split(",")
+        usable = [g for g in wanted if free.get(g, 0) >= VLA_GB]
+        if usable or waited >= GPU_WAIT_H * 3600:
+            break
+        if waited == 0:
+            log(f"GPU free memory (GB): { {g: round(v, 1) for g, v in free.items()} }: none has {VLA_GB} GB; waiting up to {GPU_WAIT_H:g} h")
+        time.sleep(300)
+        waited += 300
+    log(f"GPU free memory (GB): { {g: round(v, 1) for g, v in free.items()} } -> using {usable}" + (f" (after waiting {waited / 60:.0f} min)" if waited else ""))
     if not usable:
-        raise SystemExit(f"no GPU with >= {VLA_GB} GB free for OpenVLA; wait for other jobs or set SAFEBENCH_GPUS")
+        raise SystemExit(f"no GPU with >= {VLA_GB} GB free for OpenVLA after {GPU_WAIT_H:g} h; set SAFEBENCH_GPUS or free a GPU")
     return usable
 N_TEST = int(os.environ.get("SAFEBENCH_N_TEST", "4"))
 N_TASKS = int(os.environ.get("SAFEBENCH_N_TASKS", "10"))
